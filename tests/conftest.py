@@ -17,3 +17,10 @@ def created_user():
     }
     response = post("/users", payload)
     return response.json()
+
+@pytest.fixture(scope="session")
+def auth_token():
+    """Logs in and returns a valid auth token"""
+    payload = {"email": "eve.holt@reqres.in", "password": "cityslicka"}
+    response = post("/login", payload)
+    return response.json()["token"]
