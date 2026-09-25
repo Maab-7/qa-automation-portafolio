@@ -1,3 +1,9 @@
+![Python](https://img.shields.io/badge/Python-3.9-blue?logo=python)
+![pytest](https://img.shields.io/badge/pytest-8.1.1-blue?logo=pytest)
+![Tests](https://img.shields.io/badge/tests-40%20passing-brightgreen)
+![ISTQB](https://img.shields.io/badge/ISTQB-CTFL%20v4.0-orange)
+![License](https://img.shields.io/badge/license-MIT-lightgrey)
+
 # QA Automation Portfolio — API Testing with Python & pytest
 
 A professional API test automation framework built with Python and pytest, targeting the [ReqRes](https://reqres.in) REST API. This project demonstrates real-world QA engineering practices including test organization, fixtures, markers, parametrization, and HTML reporting.
@@ -18,22 +24,26 @@ A professional API test automation framework built with Python and pytest, targe
 
 ## Project Structure
 
+## Project Structure
+
+```
 qa-automation-portfolio/
 ├── tests/
-│ ├── conftest.py # Shared fixtures (session scope)
-│ └── api/
-│ ├── test_users.py # GET user endpoints
-│ ├── test_crud.py # POST, PUT, DELETE operations
-│ ├── test_auth.py # Login and Register endpoints
-│ └── test_parametrize.py # Parametrized test scenarios
+│   ├── conftest.py           # Shared fixtures (session scope)
+│   └── api/
+│       ├── test_users.py     # GET user endpoints
+│       ├── test_crud.py      # POST, PUT, DELETE operations
+│       ├── test_auth.py      # Login and Register endpoints
+│       └── test_parametrize.py  # Parametrized test scenarios
 ├── utils/
-│ └── api_client.py # Centralized HTTP client with auth headers
+│   └── api_client.py         # Centralized HTTP client with auth headers
 ├── reports/
-│ └── report.html # Auto-generated HTML test report
-├── .env # API key (not committed to version control)
+│   └── report.html           # Auto-generated HTML test report
+├── .env                      # API key (not committed to version control)
 ├── .gitignore
-├── pytest.ini # Marker registration
+├── pytest.ini                # Marker registration
 └── requirements.txt
+```
 
 ---
 
