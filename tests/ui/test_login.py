@@ -18,6 +18,7 @@ class TestLogin:
         login = LoginPage(page)
         login.navigate()
         login.login("standard_user", "secret_sauce")
+        page.wait_for_selector(".inventory_list")
         assert page.locator(".inventory_list").is_visible()
 
     @pytest.mark.regression
