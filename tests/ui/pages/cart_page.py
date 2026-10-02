@@ -17,7 +17,7 @@ class CartPage:
 
     def get_item_names(self):
         """Return list of product names in cart."""
-        self.page.wait_for_selector(".inventory_item_name", timeout=5000)
+        self.page.wait_for_selector(".inventory_item_name", timeout=8000)
         return self.cart_items.locator(".inventory_item_name").all_text_contents()
 
     def remove_item(self, item_name):

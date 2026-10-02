@@ -11,6 +11,7 @@ class TestInventory:
         """Inventory page should display product list after login."""
         BasePage(page).login()
         inventory = InventoryPage(page)
+        page.wait_for_selector(".inventory_list")
         assert inventory.inventory_list.is_visible()
 
     @pytest.mark.smoke
