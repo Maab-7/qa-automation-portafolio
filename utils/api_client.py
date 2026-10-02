@@ -4,7 +4,16 @@ from dotenv import load_dotenv
 from pathlib import Path
 
 # Explicitly find .env file in the project root directory
-load_dotenv(dotenv_path=Path(__file__).parent.parent / '.env')
+# load_dotenv(dotenv_path=Path(__file__).parent.parent / '.env')
+
+# Load .env only if it exists (local development)
+# In CI, the environment variable is injected directly by GitHub Actions
+env_path = next(
+    (p / ".env" for p in [Path(__file__).resolve(), *Path(__file__).resolve().parents] if (p / ".env").exists()),
+    None
+)
+if env_path:
+    load_dotenv(dotenv_path=env_path)
 
 BASE_URL = "https://reqres.in/api"
 API_KEY = os.getenv("REQRES_API_KEY")
