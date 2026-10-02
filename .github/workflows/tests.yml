@@ -29,14 +29,6 @@ jobs:
       - name: Install Playwright browsers
         run: playwright install chromium
 
-      - name: Debug - verify secret is loaded
-        run: |
-          if [ -z "$REQRES_API_KEY" ]; then
-            echo "SECRET IS EMPTY"
-          else
-            echo "SECRET IS LOADED - first 8 chars: ${REQRES_API_KEY:0:8}"
-          fi
-
       - name: Run API tests
         run: python -m pytest tests/api/ -v --html=reports/api-report.html --self-contained-html
 
