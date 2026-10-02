@@ -21,4 +21,5 @@ class InventoryPage:
         """Click the cart icon to navigate to cart page."""
         self.cart_link.click()
         self.page.wait_for_url("**/cart.html")
+        self.page.wait_for_load_state("networkidle")
         
